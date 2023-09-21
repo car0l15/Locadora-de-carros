@@ -5,7 +5,7 @@ const database = require('./configs/database');
 database.mongoose
     .connect(database.url, {
         useNewUrlParser: true,
-        useUnfinedTopology: true,
+        useUnifiedTopology: true
     }).then(() => {
         console.log('conexão estabelecida');
     }).catch(error => {
