@@ -21,14 +21,12 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+let carroRouter = require('./routes/carroRouter');
+app.use('/', carroRouter);
+
 const PORT = 3000;
 const HOST = '0.0.0.0';
 
 app.listen(PORT, HOST, () => {
     console.log('ouvindo a porta', PORT);
-});
-
-// teste de get
-app.get('/', (req, res) => {
-    res.send('Olá, Mundo!!');
 });

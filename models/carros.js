@@ -38,7 +38,7 @@ const Carro = mongoose.Schema({
 
     observacoes: {
         type: String,
-        required: true
+        required: false
     }
 }, { versionKey: false })
 
