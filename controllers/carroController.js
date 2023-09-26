@@ -1,8 +1,9 @@
 const Carro = require('../models/carros');
 
-module.exports = class ControllerCarro {
-    static async postCar(req, res) {
-        console.log(req.body);
+module.exports = class ControllerCarro 
+{
+    static async postCar(req, res) 
+    {
 
         const carro = new Carro({
             placa: req.body.placa,
@@ -29,7 +30,8 @@ module.exports = class ControllerCarro {
         
     };
 
-    static async getAllCars(req, res) {
+    static async getAllCars(req, res) 
+    {
         try {
 
         const carros = await Carro.find();

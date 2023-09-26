@@ -8,7 +8,7 @@ const Utilitarios = mongoose.Schema({
         required: true
     },
 
-    tamanhoPassageiro: {
+    tamanhoBageiro: {
         type: Number,
         required: true
     },

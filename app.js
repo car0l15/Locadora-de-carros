@@ -24,6 +24,8 @@ app.use(express.urlencoded({
 let carroRouter = require('./routes/carroRouter');
 app.use('/', carroRouter);
 
+let esportivoRouter = require('./routes/esportivoRouter');
+app.use('/', esportivoRouter);
 
 
 const PORT = 3000;
