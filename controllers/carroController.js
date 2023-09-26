@@ -4,6 +4,7 @@ module.exports = class ControllerCarro
 {
     static async postCar(req, res) 
     {
+        console.log(req.body)
 
         const carro = new Carro({
             placa: req.body.placa,

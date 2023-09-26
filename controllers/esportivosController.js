@@ -11,7 +11,7 @@ module.exports = class esportivosController
         const carrosEsportivos = new CarrosEsportivos({    
             idCarro: c._id,
             tempo100km: req.body.tempo100km,
-            mellhorias: req.body.mellhorias
+            melhorias: req.body.melhorias
         })
 
         carrosEsportivos.save(carrosEsportivos).then(data => {

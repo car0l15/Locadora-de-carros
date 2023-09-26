@@ -27,6 +27,8 @@ app.use('/', carroRouter);
 let esportivoRouter = require('./routes/esportivoRouter');
 app.use('/', esportivoRouter);
 
+let utilitarioRouter = require('./routes/utilitariosRouter');
+app.use('/', utilitarioRouter);
 
 const PORT = 3000;
 const HOST = '0.0.0.0';

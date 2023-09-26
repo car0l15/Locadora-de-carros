@@ -8,9 +8,9 @@ module.exports = class utiliariosController
         const c = await Carro.findOne({ placa: req.body.placa });
 
         const carrosUtilitarios = new CarrosUtilitarios({
-            idCarro: c_id,
+            idCarro: c._id,
             qntPassageiros: req.body.qntPassageiros,
-            tamanhoBageiro: req.body.tamanhoBageiro,
+            tamanhoBagageiro: req.body.tamanhoBagageiro,
             kmPorLitroDeGasolina: req.body.kmPorLitroDeGasolina
         })
 

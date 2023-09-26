@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const Utilitarios = mongoose.Schema({
+    idCarro: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Carro',
+        required: true
+    },
 
     qntPassageiros: {
 
@@ -8,7 +13,7 @@ const Utilitarios = mongoose.Schema({
         required: true
     },
 
-    tamanhoBageiro: {
+    tamanhoBagageiro: {
         type: Number,
         required: true
     },
