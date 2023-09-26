@@ -15,18 +15,6 @@ module.exports = class ControllerCarro {
             observacoes: req.body.observacoes
         });
 
-
-        // fazendo esse try/catch apenas para subir mais um exemplo de tratativa
-
-        // try {
-        //     const result = await carro
-        //     return res.status(200).json(result);
-        // } catch (error) {
-        //     res.status(500).send({
-        //         message: error
-        //     })
-        // }
-
         carro.save(carro).then(data => {
             res.send(data);
         }).catch(err => {
@@ -39,5 +27,21 @@ module.exports = class ControllerCarro {
 
         
         
+    };
+
+    static async getAllCars(req, res) {
+        try {
+
+        const carros = await Carro.find();
+        return res.status(200).json(carros)
+            
+        } catch (error) {
+            res.status(500).send({
+        message: `ocorreu um erro ao estabelecer conexão: ${error.message}`
+            })
+        }
     }
+
+   
 }
+
