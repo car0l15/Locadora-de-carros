@@ -32,7 +32,7 @@ const Funcionarios = new mongoose.Schema({
         require: true
     },
 
-    endereço: {
+    endereco: {
         type: String,
         require: true
     },
