@@ -4,52 +4,52 @@ const Funcionarios = new mongoose.Schema({
 
     nome: {
         type: String,
-        require: true
+        required: true
     },
 
     CPF: {
         type: String,
-        require: true
+        required: true
     },
 
     idade: {
         type: String,
-        require: true
+        required: true
     },
 
     dtNascimento: {
         type: Date,
-        require: true
+        required: true
     },
 
     telefone: {
         type: String,
-        require: true
+        required: true
     },
 
     email: {
         type: String,
-        require: true
+        required: true
     },
 
     endereco: {
         type: String,
-        require: true
+        required: true
     },
 
     salario: {
         type: Number,
-        require: true
+        required: true
     },
 
     qtDeAlugueis: {
         type: Number,
-        require: true
+        required: true
     },
 
     statusAtivo: {
         type: Boolean,
-        require: true
+        required: true
     }
 
 }, {versionKey: false})

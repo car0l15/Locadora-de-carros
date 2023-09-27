@@ -4,28 +4,28 @@ const Reserva = new mongoose.Schema({
     placaCarro: {
        type: String,
         ref: 'Carro',
-        require: true
+        required: true
     },
 
     cpfCliente: {
         type: String,
         ref: 'Cliente',
-        require: true
+        required: true
     },
 
     status:{
         type: Boolean,
-        require: true
+        required: true
     },
 
     dtInicio: {
         type: Date,
-        require: true
+        required: true
     },
 
     dtFinal: {
         type: Date,
-        require: true
+        required: true
     }
 }, {versionKey: false })
 

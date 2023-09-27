@@ -3,53 +3,53 @@ const mongoose = require('mongoose');
 const Cliente = new mongoose.Schema({
     nome: {
         type: String,
-        require: true
+        required: true
     },
 
     CPF: {
         type: String,
-        require: true
+        required: true
     },
 
     idade: {
         type: String,
-        require: true
+        required: true
     },
 
     dtNascimento: {
         type: Date,
-        require: true
+        required: true
     },
 
     telefone: {
         type: String,
-        require: true
+        required: true
     },
 
     email: {
         type: String,
-        require: true
+        required: true
     },
 
     endereco: {
         type: String,
-        require: true
+        required: true
     },
 
     nmrCarteiraMotorista: {
         type: Number,
-        require: true
+        required: true
     },
 
     anoVencimentoCarteira: {
         type: Number,
-        require: true
+        required: true
     },
 
     fotoDaCarteira: {
         type: Buffer,
         contentType: String,
-        require: false
+        required: false
     },
 
 
