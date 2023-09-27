@@ -1,21 +1,33 @@
-const Reserva = require('../models/reserva');
+const Reserva = require("../models/reserva");
 const Cliente = require('../models/cliente');
-const Carro = require('../models/carro');
+const Carro = require('../models/carros');
 
-module.exports = class ReservaController 
-{
-    static async postReserva(req, res)
-    {
-        const carro = await Carro.findOne({ placa: req.body.placa });
-        const cliente = await Cliente.findOne({ cpf: req.body.cpf });
+module.exports = class ReservaController {
 
-        const reserva = new Reserva
-        ({
-            placaCarro: Carro.placa,
-            cpfCliente: Cliente.CPF,
-            status: req.body.status,
-            dtInicio: req.body.status,
-            dtFinal: req.body.dtFinal
-        })
+    static async postReserva(req, res) {
+        console.log(req.body)
+
+        const carro = await Carro.findOne({ placa: req.body.placa })
+
+        const cliente = await Cliente.findOne({ CPF: req.body.cpfCliente})
+
+        console.log(cliente)
+
+       const reserva = new Reserva({
+        placa: carro.placa,
+        cpfCliente: req.body.CPF,
+        status: req.body.status,
+        dtInicio: req.body.dtInicio,
+        dtFinal: req.body.dtFinal
+       })
+
+
+        reserva.save(reserva).then(data => {
+            res.send(data);
+        }).catch(err => {
+            res.status(500).send({
+                message: err.message || `Erro ao tentar inserir os dados da reserva: ${reserva}.`
+            });
+        });
     }
 }

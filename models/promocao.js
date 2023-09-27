@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Promocao = new mongoose.Schema({
+const Promocoes = new mongoose.Schema({
     titulo: {
         type: String,
         required: true
@@ -17,4 +17,4 @@ const Promocao = new mongoose.Schema({
     }
 }, {versionKey: false})
 
-module.exports = mongoose.model('Promocao', Promocao);
+module.exports = mongoose.model('Promocoes', Promocoes);

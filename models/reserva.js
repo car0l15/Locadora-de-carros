@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Reserva = new mongoose.Schema({
-    placaCarro: {
+    placa: {
        type: String,
         ref: 'Carro',
         required: true

@@ -4,7 +4,6 @@ module.exports = class ClienteController
 {
     static async postCliente(req, res)
     {
-        console.log(req.body);
 
         const cliente = new Cliente
         ({
@@ -20,12 +19,14 @@ module.exports = class ClienteController
             fotoDaCarteira: req.body.fotoDaCarteira
         })
 
+        console.log(cliente)
+
         cliente.save(cliente).then(data => {
             res.send(data);
         }).catch(err => {
-           res.status(500).send({
-            message: err.menssage || 'Erro ao tentar cadastrar o cliente'
-           })
-        });
+            res.status(500).send({
+                message: err.message || `Erro ao tentar inserir dados do cliente`
+            })
+        })
     }
 }

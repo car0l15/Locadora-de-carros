@@ -30,6 +30,18 @@ app.use('/', esportivoRouter);
 let utilitarioRouter = require('./routes/utilitariosRouter');
 app.use('/', utilitarioRouter);
 
+let clienteRouter = require('./routes/clienteRouter');
+app.use('/', clienteRouter);
+
+let funcionarioRouter = require('./routes/funcionarioRouter');
+app.use('/', funcionarioRouter);
+
+let reservaRouter = require('./routes/reservaRouter');
+app.use('/', reservaRouter);
+
+let promocaoRouter = require('./routes/promocaoRouter');
+app.use('/', promocaoRouter);
+
 const PORT = 3000;
 const HOST = '0.0.0.0';
 

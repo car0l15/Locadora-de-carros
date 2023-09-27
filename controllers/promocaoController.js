@@ -6,7 +6,7 @@ module.exports = class PromocaoController
     {
         console.log(req.body);
 
-        const promocao = new Promocao
+        const promocao = new Promocoes
         ({
            titulo: req.body.titulo,
            descricao: req.body.descricao,
