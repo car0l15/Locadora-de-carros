@@ -47,26 +47,23 @@ module.exports = class ReservaController {
         message: err.menssage || 'Erro ao buscar reserva'
        })
     });
-
     }
 
-    static async putReserva(req, res)
-    {
-        const { id } = req.params;
+    static async putReserva(req, res) {
+        console.log(req)
 
-        Reserva.findByIdAndUpdate(id, req.body, { useFindAndModify: false }).then(data =>{
-            if(!data){
+        const { id } = req.query;
+
+        Reserva.findByIdAndUpdate(id, req.body, { useFindAndModify: false }).then(data => {
+            if (!data) {
                 res.status(404).send({
-                    message: `reserva de id número ${id} não encontrada`
-                })
-
-                res.send({ message: `Reserva id: ${id} atualizada com sucesso.` })
-            }
+                    message: `Não conseguiu encontrar reserva com id: ${id}.`
+                });
+            } else res.send({ message: `Reserva id: ${id} atualizada com sucesso.` });
         }).catch(err => {
             res.status(500).send({
                 message: "Erro ao tentar atualizar reserva com id: " + id
             });
         });
-            
     }
 }
