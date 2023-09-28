@@ -15,19 +15,18 @@ module.exports = class ReservaController {
 
        const reserva = new Reserva({
         placa: carro.placa,
-        cpfCliente: req.body.CPF,
+        cpfCliente: cliente.CPF,
         status: req.body.status,
         dtInicio: req.body.dtInicio,
         dtFinal: req.body.dtFinal
        })
 
-
-        reserva.save(reserva).then(data => {
-            res.send(data);
-        }).catch(err => {
-            res.status(500).send({
-                message: err.message || `Erro ao tentar inserir os dados da reserva: ${reserva}.`
-            });
-        });
+       reserva.save(reserva).then(data => {
+        res.send(data);
+    }).catch(err => {
+       res.status(500).send({
+        message: err.menssage || 'Erro ao tentar cadastrar nova reserva'
+       })
+    });
     }
 }
