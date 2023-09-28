@@ -29,4 +29,18 @@ module.exports = class ClienteController
             })
         })
     }
+
+    static async getCliente(req, res)
+    {
+       const cliente = await Cliente.findOne({CPF: req.body.CPF})
+
+       cliente.save(cliente).then(data => {
+        res.send(data);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || `Erro ao tentar inserir dados do cliente`
+        })
+    })
+    }
+
 }

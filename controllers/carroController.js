@@ -25,10 +25,7 @@ module.exports = class ControllerCarro
                     err.message || `Erro ao tentar inserir os dados da carro: ${carro}.`
             })
         
-        });
-
-        
-        
+        });       
     };
 
     static async getAllCars(req, res) 
@@ -41,10 +38,39 @@ module.exports = class ControllerCarro
         } catch (error) {
             res.status(500).send({
         message: `ocorreu um erro ao estabelecer conexão: ${error.message}`
-            })
+            });
         }
     }
 
-   
+    static async getPeloTipo(req, res) {
+        Carro.find({ tipo: req.body.tipo }).then(data => {
+            res.send(data);
+        }).catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || `Erro ao tentar buscar carro pelo tipo: ${req.body.tipo}.`
+            });
+        });
+    }
+
+    static async getCarroPorPlaca(req, res)
+    {
+        const carro = await Carro.findOne({ placa: req.body.placa })
+
+        if(!carro){
+            return res.status(404).json({
+                message: `não foi possivel encontrar as informações do carro de placa ${req.body.placa}`
+            });
+        }
+
+        carro.save(carro).then(data => {
+            res.send(data);
+        }).catch(err => {
+            res.status(500).send({
+                message: err.message || 'Erro ao buscar carro'
+            })
+        });
+    }
+
 }
 

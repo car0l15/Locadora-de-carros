@@ -29,4 +29,24 @@ module.exports = class ReservaController {
        })
     });
     }
+
+    static async getReservaPorPlaca(req, res) 
+    {
+       const reserva = await Reserva.findOne({ placa: req.body.placa })
+
+       if(!reserva){
+        return res.status(404).json({
+            message: `não foi possivel encontrar reserva para carro de placa ${req.body.placa}`
+        })
+       }
+
+       reserva.save(reserva).then(data => {
+        res.send(data);
+    }).catch(err => {
+       res.status(500).send({
+        message: err.menssage || 'Erro ao buscar reserva'
+       })
+    });
+
+    }
 }
