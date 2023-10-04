@@ -49,7 +49,7 @@ module.exports = class ReservaController {
     });
     }
 
-    static async putReserva(req, res) {
+     static async putReserva(req, res) {
         console.log(req)
 
         const { id } = req.query;
@@ -59,7 +59,8 @@ module.exports = class ReservaController {
                 res.status(404).send({
                     message: `Não conseguiu encontrar reserva com id: ${id}.`
                 });
-            } else res.send({ message: `Reserva id: ${id} atualizada com sucesso.` });
+            } 
+            res.send({ message: `Reserva id: ${id} atualizada com sucesso.` });
         }).catch(err => {
             res.status(500).send({
                 message: "Erro ao tentar atualizar reserva com id: " + id

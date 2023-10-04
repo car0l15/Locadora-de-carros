@@ -39,9 +39,6 @@ app.use('/', funcionarioRouter);
 let reservaRouter = require('./routes/reservaRouter');
 app.use('/', reservaRouter);
 
-let promocaoRouter = require('./routes/promocaoRouter');
-app.use('/', promocaoRouter);
-
 const PORT = 3000;
 const HOST = '0.0.0.0';
 

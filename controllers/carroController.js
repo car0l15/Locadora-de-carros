@@ -72,5 +72,25 @@ module.exports = class ControllerCarro
         });
     }
 
+    static async deletarCarro(req, res) {
+        const { id } = req.query;
+
+        Carro.findByIdAndRemove(id, { useFindAndModify: false }).then(data => {
+            if (!data) {
+                res.status(404).send({
+                    message: `Não conseguiu encontrar carro com id: ${id}.`
+                });
+            } 
+                res.send({
+                    message: `Carro com id: ${id} deletado com sucesso.`
+                });
+        }).catch(err => {
+            res.status(500).send({
+                message: `Erro ao tentar deletar carro com id: ${id}.`
+            });
+        });
+    }
+
+
 }
 
