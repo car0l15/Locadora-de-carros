@@ -23,18 +23,16 @@ module.exports = class ControllerCarro
             res.status(500).send({
                 message:
                     err.message || `Erro ao tentar inserir os dados da carro: ${carro}.`
-            })
-        
+            });        
         });       
-    };
+    }
 
     static async getAllCars(req, res) 
     {
         try {
 
         const carros = await Carro.find();
-        return res.status(200).json(carros)
-            
+        return res.status(200).json(carros)       
         } catch (error) {
             res.status(500).send({
         message: `ocorreu um erro ao estabelecer conexão: ${error.message}`
@@ -62,13 +60,12 @@ module.exports = class ControllerCarro
                 message: `não foi possivel encontrar as informações do carro de placa ${req.body.placa}`
             });
         }
-
         carro.save(carro).then(data => {
             res.send(data);
         }).catch(err => {
             res.status(500).send({
                 message: err.message || 'Erro ao buscar carro'
-            })
+            });
         });
     }
 

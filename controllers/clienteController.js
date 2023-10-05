@@ -26,8 +26,8 @@ module.exports = class ClienteController
         }).catch(err => {
             res.status(500).send({
                 message: err.message || `Erro ao tentar inserir dados do cliente`
-            })
-        })
+            });
+        });
     }
 
     static async getCliente(req, res)
@@ -39,8 +39,8 @@ module.exports = class ClienteController
     }).catch(err => {
         res.status(500).send({
             message: err.message || `Erro ao tentar inserir dados do cliente`
-        })
-    })
+        });
+    });
     }
 
 }

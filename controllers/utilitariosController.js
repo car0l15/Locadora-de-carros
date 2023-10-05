@@ -19,7 +19,7 @@ module.exports = class utiliariosController
         }).catch(err => {
             res.status(500).send({
                 message: err.message || `Erro ao tentar inserir dados na categoria utilitária`
-            })
-        })
+            });
+        });
     }
 }

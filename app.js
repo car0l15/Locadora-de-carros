@@ -11,7 +11,7 @@ database.mongoose
     }).catch(error => {
         console.log('error ao estabelecer conexão com o db', error);
         process.exit();
-    })
+    });
 
 
 const app = express();
@@ -38,6 +38,9 @@ app.use('/', funcionarioRouter);
 
 let reservaRouter = require('./routes/reservaRouter');
 app.use('/', reservaRouter);
+
+let promocoesRouter = require('./routes/promocoesRouter');
+app.use('/', promocoesRouter);
 
 const PORT = 3000;
 const HOST = '0.0.0.0';

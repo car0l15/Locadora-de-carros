@@ -19,8 +19,7 @@ module.exports = class esportivosController
         }).catch(err => {
             res.status(500).send({
                 message: err.menssage || `Erro ao tentar inserir dados na categoria esportiva`
-            })
+            });
         });
-
     }
-};
+}

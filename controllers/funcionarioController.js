@@ -25,7 +25,7 @@ module.exports = class FuncionarioController
         }).catch(err => {
            res.status(500).send({
             message: err.menssage || 'Erro ao tentar cadastrar novo funcionário'
-           })
+           });
         });
     }
 }
