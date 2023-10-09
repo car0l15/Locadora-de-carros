@@ -16,6 +16,15 @@ O MongoDB foi utilizado através do Docker, para utilizar em sua máquina basta 
 suas configurações de conexão e rodar o comando *docker-compose up -d* e a imagem
 do mongo executará com sucesso.
 
+## Tecnologias Utilizadas 
+
+- Body-Parser
+- Express
+- Mongoose
+- Nodemon
+- Docker
+- DotEnv
+
 
 ## Clone
 
