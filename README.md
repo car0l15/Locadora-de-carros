@@ -3,8 +3,8 @@
 ## Sobre
 
 Esta é uma API simples feita para por em prática os estudos sobre MongoDB e Node.JS.
-Node é muito flexivel e leve, trabalha bem com dados NoSQL. Sabendo disso, resolvi fazer
-este desenvolvimento para testar a combinação dessas ferramentas.
+Node é muito flexivel e leve, trabalha bem com dados NoSQL. 
+Sabendo disso, resolvi fazereste desenvolvimento para testar a combinação dessas ferramentas.
 
 Para desenvolvimento desse projeto utilizei os princípios de arquitetura MVC.
 
@@ -13,7 +13,7 @@ carros foram divididos em duas categorias, os utilitários e os esportivos. Toda
 rotas possuem métodos de GET, POST e PUT. 
 
 O MongoDB foi utilizado através do Docker, para utilizar em sua máquina basta setar 
-suas configurações de conexão e rodar o comando *docker-compose up -d* e o a imagem
+suas configurações de conexão e rodar o comando *docker-compose up -d* e a imagem
 do mongo executará com sucesso.
 
 
