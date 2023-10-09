@@ -17,7 +17,7 @@ suas configurações de conexão e rodar o comando *docker-compose up -d* e a im
 do mongo executará com sucesso.
 
 
-##Clone
+## Clone
 
 Para ter este código em sua máquina basta ir ao terminal do seu ambiente e inserir os comandos:
 
